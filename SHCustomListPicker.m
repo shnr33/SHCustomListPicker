@@ -28,7 +28,7 @@
 }
 
 -(void)setPickerList:(NSArray *)pickerList{
-    _pickerList = pickerList;
+    _pickerList = [pickerList sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     
     // traversing the array in the reverse to get the index of the smallest letter matching the string in the list.
     for (int i = (int)[_pickerList count] - 1; i > 0; i--) {
